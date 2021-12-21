@@ -1,16 +1,18 @@
 import math
 
-def power_numbers(*list):
-    return [i ** 2 for i in list]
+
+def power_numbers(*my_list):
+    return [i ** 2 for i in my_list]
 
 
 ODD = "odd"
 EVEN = "even"
 PRIME = "prime"
 
-def is_prime(list):
+
+def is_prime(lst):
     d = []
-    for i in list:
+    for i in lst:
         j = 2
         while j <= math.sqrt(i):
             if i % j == 0:
@@ -22,17 +24,19 @@ def is_prime(list):
     return d
 
 
-def filter_numbers(list, func):
+def is_odd(lst):
+    return [i for i in lst if i % 2 != 0]
 
-    def ODD(list):
-        return [i for i in list if i % 2 != 0]
 
-    def EVEN(list):
-        return [i for i in list if i % 2 == 0]
+def is_even(lst):
+    return [i for i in lst if i % 2 == 0]
 
-    if func == 'odd':
-        return ODD(list)
-    elif func == 'even':
-        return EVEN(list)
-    elif func == 'prime':
-        return is_prime(list)
+
+def filter_numbers(lst, func):
+
+    if func == ODD:
+        return is_odd(lst)
+    elif func == EVEN:
+        return is_even(lst)
+    elif func == PRIME:
+        return is_prime(lst)
