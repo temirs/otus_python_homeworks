@@ -6,13 +6,13 @@
 """
 
 
-def LowFuelError():
+class LowFuelError(Exception):
     raise Exception('LowFuelError')
 
 
-def NotEnoughFuel():
+class NotEnoughFuel(Exception):
     raise Exception('NotEnoughFuel')
 
 
-def CargoOverload():
+class CargoOverload(Exception):
     raise Exception('CargoOverload')
