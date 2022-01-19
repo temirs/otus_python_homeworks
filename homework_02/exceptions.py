@@ -7,12 +7,15 @@
 
 
 class LowFuelError(Exception):
-    raise Exception('LowFuelError')
+    def __str__(self):
+        return 'LowFuelError'
 
 
 class NotEnoughFuel(Exception):
-    raise Exception('NotEnoughFuel')
+    def __str__(self):
+        return 'NotEnoughFuel'
 
 
 class CargoOverload(Exception):
-    raise Exception('CargoOverload')
+    def __str__(self):
+        return 'CargoOverload'
