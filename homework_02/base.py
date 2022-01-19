@@ -11,7 +11,7 @@ class Vehicle(ABC):
         self.fuel_consumption = fuel_consumption
 
     def start(self):
-        if Vehicle.started == False:
+        if Vehicle.started is False:
             if self.fuel > 0:
                 Vehicle.started = True
             else:
