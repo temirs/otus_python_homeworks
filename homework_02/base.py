@@ -14,11 +14,10 @@ class Vehicle(ABC):
         if Vehicle.started is False:
             if self.fuel > 0:
                 Vehicle.started = True
-            else:
-                raise exceptions.LowFuelError
+                return Vehicle.started
+            raise exceptions.LowFuelError
 
-    def move(self, dist):
-        if dist / self.fuel_consumption <= self.fuel:
-            self.fuel -= (dist / self.fuel_consumption)
-        else:
-            raise exceptions.NotEnoughFuel
+    def move(self):
+        if self.fuel_consumption <= self.fuel:
+            return True
+        raise exceptions.NotEnoughFuel
