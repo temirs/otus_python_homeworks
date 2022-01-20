@@ -12,7 +12,7 @@ class Plane(base.Vehicle):
         self.max_cargo = max_cargo
 
     def load_cargo(self, quantity):
-        if quantity + self.cargo + self.weight > self.max_cargo:
+        if quantity + self.cargo > self.max_cargo:
             return exceptions.CargoOverload()
         self.cargo += quantity
 
