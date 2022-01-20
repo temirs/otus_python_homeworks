@@ -17,7 +17,7 @@ class Vehicle(ABC):
                 return self.started
             raise exceptions.LowFuelError
 
-    def move(self):
-        if self.fuel_consumption <= self.fuel:
+    def move(self, dist):
+        if self.fuel >= self.fuel_consumption * dist:
             return True
         raise exceptions.NotEnoughFuel
