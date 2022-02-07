@@ -6,6 +6,8 @@ WORKDIR /app
 
 RUN pip install poetry
 RUN poetry config virtualenvs.create false
+RUN poetry install fastapi
+RUN poetry install uvicorn
 
 COPY ./pyproject.toml ./pyproject.toml
 COPY ./poetry.lock ./poetry.lock
