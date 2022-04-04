@@ -18,9 +18,10 @@ app = Flask(__name__)
 
 @app.route("/")
 def main_page():
-    return render_template('index.html')
+    return render_template('base.html')
 
 
 @app.route("/about/")
 def info_page():
-    return "<p>It's my first app by flask!!!</p>"
+    #return "<p>It's my first app by flask!!!</p>"
+    return render_template('about.html')
